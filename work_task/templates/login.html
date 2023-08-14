@@ -1,0 +1,10 @@
+{% load bootstrap5 %}
+
+<h1>Log in</h1>
+  <form novalidate action="/login/?continue={{ request.GET.continue }}" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input type="submit" class="btn btn-primary">
+  </form>
+  <a href="{% url "signup" %}">create new account</a>
+<a href="{% url "index" %}">home<a/>
