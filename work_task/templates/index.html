@@ -1,8 +1,12 @@
-welcome page!
+{% extends "base.html" %}
+{% load static %}
 
+{% block content %}
+<div>Welcome!</div>
 {% if user.is_authenticated %}
 <a href="{% url "logout" %}">Log out</a>
 {% else %}
 <a href="{% url "login" %}">Log in</a>
 {% endif %}
 <a href="{% url "index" %}">home<a/>
+{% endblock content %}
