@@ -9,9 +9,8 @@ from django.contrib.auth.decorators import login_required
 from .forms import LoginForm, RegistrationForm
 from django.urls import reverse, resolve
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "askme_illarionov.askme_illarionov.settings")
 
-
+@login_required(login_url='login/', redirect_field_name="continue")
 def logout(request):
     auth.logout(request)
     return redirect(reverse("index"))
